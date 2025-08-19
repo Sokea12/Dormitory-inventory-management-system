@@ -1,0 +1,202 @@
+<?php
+ session_start();
+ include("../config/connection.php");
+ include("main_header.php");
+?>
+<!-- <form action="" method="post"></form> -->
+<form>
+    <div class="container-fluid" style="margin-bottom: 30px;">
+        <div class="row">
+            <div class="col-lg-12">
+                    <div id="table" class="table-editable" style="background-color: White; border-radius: 10px;">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="titleItem">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2 20 20"  width="30" height="30" fill="currentColor" class="w-5 h-5">
+                            <path d="M2 4.25A2.25 2.25 0 0 1 4.25 2h6.5A2.25 2.25 0 0 1 13 4.25V5.5H9.25A3.75 3.75 0 0 0 5.5 9.25V13H4.25A2.25 2.25 0 0 1 2 10.75v-6.5Z" />
+                            <path d="M9.25 7A2.25 2.25 0 0 0 7 9.25v6.5A2.25 2.25 0 0 0 9.25 18h6.5A2.25 2.25 0 0 0 18 15.75v-6.5A2.25 2.25 0 0 0 15.75 7h-6.5Z" />
+                            </svg>
+                            ព័ត៌មានលម្អិតអំពីប្រភេទសម្ភារ៖
+                        </h4>
+                    </div>
+                    <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <br><br><br>
+                                            <div class="media mb-5">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 mb-1">លេខកូដ</h5>
+                                                    <?=$_GET['category_code'];?> 
+                                                </div>
+                                            </div>
+                                            <div class="media mb-5">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 mb-1">ការពិពណ៌នា</h5>
+                                                    <?=$_GET['category_dsc'];?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                        <br><br><br>
+                                            <div class="media mb-5">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 mb-1">ឈ្មោះ</h5>
+                                                    <?=$_GET['category_name'];?>
+                                                </div>
+                                            </div>
+                                            <div class="media mb-5">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 mb-1">កាលបរិច្ឆេទបង្កើត</h5>
+                                                    <?=$_GET['category_created_date'];?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- </div> -->
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <br>
+                                                <ul class="list-unstyled p-0 m-0 row">
+                                                <li class="col-lg-5 col-md-6 col-sm-6 mt-2"><img src="../assets/images/categorys/<?=$_GET['category_image'];?>" class="rounded w-100" alt="Responsive image" style="width: 190px; height: 190px;"></li>
+                                                </ul>
+                                            <br>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="titleItem">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2 24 24"  width="25" height="25" fill="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+                                            </svg>
+                                            សម្ភារ៖
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div id="table" class="table-editable" style="background-color: White; border-radius: 10px;" >
+                                        <table class="table table-bordered table-responsive-md table-striped text-center" style="border-radius: 10px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>កាលបរិច្ឆេទបង្កើត</th>
+                                                    <th>លេខកូដសម្ភារៈ</th>
+                                                    <th>ឈ្មោះ</th>
+                                                    <th>តម្លៃរាយ</th>
+                                                    <th>ដម្លៃដុំ</th>
+                                                    <th>ការពិពណ៌នា</th>
+                                                    <th>រូបភាព</th> 
+                                                </tr>
+                                            </thead>
+                                            <tbody class="ligth-body">
+                                                <?php
+                                                $category_id = $_GET['category_id'];
+                                                $query ="SELECT * FROM tbl_item WHERE item_categoryid = $category_id AND item_status = '1'"; 
+                                                $query_run = mysqli_query($conn, $query);
+                                                        
+                                                if(mysqli_num_rows($query_run) > 0)
+                                                {
+                                                    foreach($query_run as $row)
+                                                    { 
+                                                    ?>
+                                                    <td><?= $row['item_created_date']; ?></td>
+                                                    <td><?= $row['item_code']; ?></td>
+                                                    <td><?= $row['item_name']; ?></td>
+                                                    <td><?= $row['item_retailprice']; ?></td>
+                                                    <td><?= $row['item_wholesaleprice']; ?></td>
+                                                    <td><?= $row['item_dsc']; ?></td>
+                                                    <td>
+                                                        <img src="../assets/images/categorys/<?= $row['item_image']; ?>" class="img-fluid rounded avatar-50 mr-3" alt="image">
+                                                    </td>
+                                                    </tr>
+                                                    <?php
+                                                    }
+                                                }else{
+                                                    ?>
+                                                    <tr>
+                                                        <td colspan="5">No data available in table</td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                            ?>
+                                            </tbody>
+                                        </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mt-5 pb-3">
+                                <a type="button" href="form_category_list.php" class="btn btn-secondary mr-2">ត្រឡប់</a>
+                                <a href="form_item_addtocategory.php?category_id=<?= $_GET['category_id']; ?>&category_name=<?= $_GET['category_name']; ?>&category_code=<?= $_GET['category_code']; ?>&category_dsc=<?= $_GET['category_dsc']; ?>&category_created_date=<?= $_GET['category_created_date']; ?>&category_image=<?= $_GET['category_image']; ?>" class="btn btn-primary mr-2">បន្ថែមធាតុថ្មី</a>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</form>
+<!-- Wrapper End-->
+</div>
+
+<?php
+ include("main_foother.php");
+?>
+
+
+<!-- Modal -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Button Click</title>
+</head>
+<body>
+<!-- Button to trigger modal -->
+<button id="autoButtonClick" style="display:none;" data-toggle="modal" data-target="#exampleModal" data-delete-modal-values="<?= $row['us_id']; ?>|<?= $user_profile['usf_firstname']; ?>">Delete</button>
+
+<!-- Modal -->
+<form action="item/delete_item.php" method="post">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="hiddenItemId" name="hiddenItemId" value="">
+        <p>Are you sure you want to delete <span id="deleteItemName"></span>?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+<script>
+  // Function to auto click the button with ID 'autoButtonClick'
+  function autoClickButton(itemId, itemName) {
+    document.getElementById('autoButtonClick').click();
+    document.getElementById('hiddenItemId').value = itemId; 
+    document.getElementById('deleteItemName').innerText = itemName; 
+    
+    // alert(usName);
+  }
+
+  // Check if the 'massage' parameter is set in the URL
+  var urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('massage')) {
+    // document.getElementById('autoButtonClick').click();
+  }
+</script>
+
+</body>
+</html>

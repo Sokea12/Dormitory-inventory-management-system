@@ -1,0 +1,41 @@
+#textmylogo{
+    font-size: 50px;
+    margin-left: 10px;
+    color: White;
+    font: optional;
+}
+
+/* .iq-sidebar-logo a span{margin-left:10px;color:#fff;font-size:50px;line-height:42px;padding-left:1px;letter-spacing:1.5px;font-weight:600;flex:1;transition:all .6s ease-in-out} */
+.iq-sidebar-logo a span {
+    margin-left: 10px;
+    color: #fff;
+    font-size: 50px;
+    line-height: 42px;
+    padding-left: 1px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    flex: 1;
+    transition: all .6s ease-in-out;
+}
+
+.icon_action_category a{
+    border: 0px solid red;
+    border-radius: 10px;
+    border: 2px solid #7d9ce9;
+    padding: 5px;
+    margin: 0px;
+    color: #cbcbcb;
+    background-color: rgb(79, 177, 235);
+    width: 32px;
+    height: inherit;
+    font-size: large;
+    font: bold;
+    text-align: right;
+    flex-direction: column;
+    border: 1px;
+    display: flex;
+    float: right;
+
+    overflow: hidden;
+
+}
